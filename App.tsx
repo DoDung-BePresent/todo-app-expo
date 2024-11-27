@@ -12,7 +12,7 @@ import {
   Poppins_700Bold_Italic,
 } from "@expo-google-fonts/poppins";
 import AppLoading from "expo-app-loading";
-import { fontFamilies } from "./src/constants/fontFamilies";
+import HomeScreen from "./src/homes/HomeScreen";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -31,20 +31,9 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={{ fontFamily: fontFamilies.regular, fontSize: 32 }}>
-        Open up App.tsx to start working on your app!
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar translucent backgroundColor="transparent" style="light" />
+      <HomeScreen />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
