@@ -1,5 +1,4 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import {
   useFonts,
@@ -13,7 +12,9 @@ import {
   Poppins_700Bold_Italic,
 } from "@expo-google-fonts/poppins";
 import AppLoading from "expo-app-loading";
-import HomeScreen from "./src/homes/HomeScreen";
+import HomeScreen from "./src/screens/homes/HomeScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import Router from "./src/routes/Router";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -34,7 +35,9 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <StatusBar translucent backgroundColor="transparent" style="light" />
-      <HomeScreen />
+      <NavigationContainer>
+        <Router />
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }

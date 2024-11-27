@@ -1,12 +1,12 @@
 import React from "react";
-import Container from "../components/Container";
-import RowComponent from "../components/RowComponent";
-import SectionComponent from "../components/SectionComponent";
-import TextComponent from "../components/TextComponent";
-import TitleComponent from "../components/TitleComponent";
+import Container from "../../components/Container";
+import RowComponent from "../../components/RowComponent";
+import SectionComponent from "../../components/SectionComponent";
+import TextComponent from "../../components/TextComponent";
+import TitleComponent from "../../components/TitleComponent";
 import { TouchableOpacity, View } from "react-native";
-import { globalStyles } from "../styles/globalStyles";
-import CardComponent from "../components/CardComponent";
+import { globalStyles } from "../../styles/globalStyles";
+import CardComponent from "../../components/CardComponent";
 import {
   Add,
   Edit2,
@@ -14,16 +14,16 @@ import {
   Notification,
   SearchNormal1,
 } from "iconsax-react-native";
-import { colors } from "../constants/colors";
-import TagComponent from "../components/TagComponent";
-import SpaceComponent from "../components/SpaceComponent";
-import CircularComponent from "../components/CircularComponent";
-import CardImageComponent from "../components/CardImageComponent";
-import AvatarGroupComponent from "../components/AvatarGroupComponent";
-import ProgressBarComponent from "../components/ProgressBarComponent";
+import { colors } from "../../constants/colors";
+import TagComponent from "../../components/TagComponent";
+import SpaceComponent from "../../components/SpaceComponent";
+import CircularComponent from "../../components/CircularComponent";
+import CardImageComponent from "../../components/CardImageComponent";
+import AvatarGroupComponent from "../../components/AvatarGroupComponent";
+import ProgressBarComponent from "../../components/ProgressBarComponent";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }: any) => {
   const insets = useSafeAreaInsets();
   return (
     <View style={{ flex: 1 }}>
@@ -151,12 +151,13 @@ const HomeScreen = () => {
         }}
       >
         <TouchableOpacity
+          onPress={() => navigation.navigate("AddNewTask")}
           style={[
             globalStyles.row,
             {
               backgroundColor: colors.blue,
               padding: 10,
-              borderRadius: 100,
+              borderRadius: 10,
               width: "80%",
               display: "flex",
               alignItems: "center",

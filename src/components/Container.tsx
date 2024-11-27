@@ -19,7 +19,7 @@ const Container = (props: Props) => {
       style={[
         globalStyles.container,
         {
-          paddingTop: insets.top,
+          paddingTop: insets.top + 10,
           paddingBottom: insets.bottom,
           paddingLeft: insets.left,
           paddingRight: insets.right,
