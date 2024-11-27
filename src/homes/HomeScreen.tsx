@@ -9,6 +9,8 @@ import { globalStyles } from "../styles/globalStyles";
 import CardComponent from "../components/CardComponent";
 import { Element4, Notification, SearchNormal1 } from "iconsax-react-native";
 import { colors } from "../constants/colors";
+import TagComponent from "../components/TagComponent";
+import SpaceComponent from "../components/SpaceComponent";
 
 const HomeScreen = () => {
   return (
@@ -38,7 +40,13 @@ const HomeScreen = () => {
             <View style={{ flex: 1 }}>
               <TitleComponent text="Task progress" />
               <TextComponent text="30/40 tasks done" />
-              <TextComponent text="fag" />
+              <SpaceComponent height={12} />
+              <RowComponent justify="flex-start">
+                <TagComponent
+                  text="March 22"
+                  onPress={() => console.log("Say bye!")}
+                />
+              </RowComponent>
             </View>
             <View>
               <TextComponent text="circle" />
