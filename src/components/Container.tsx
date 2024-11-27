@@ -1,6 +1,7 @@
-import { View, Text, ScrollView } from "react-native";
+import { ScrollView } from "react-native";
 import React, { ReactNode } from "react";
 import { globalStyles } from "../styles/globalStyles";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 interface Props {
   title?: string;
@@ -11,8 +12,28 @@ interface Props {
 
 const Container = (props: Props) => {
   const { title, back, right, children } = props;
+  const insets = useSafeAreaInsets();
 
-  return <ScrollView style={[globalStyles.container]}>{children}</ScrollView>;
+  return (
+    <ScrollView
+      style={[
+        globalStyles.container,
+        {
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom,
+          paddingLeft: insets.left,
+          paddingRight: insets.right,
+        },
+      ]}
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{
+        flexGrow: 1,
+        paddingBottom: insets.bottom + 50,
+      }}
+    >
+      {children}
+    </ScrollView>
+  );
 };
 
 export default Container;
